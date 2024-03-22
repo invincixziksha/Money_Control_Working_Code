@@ -1,8 +1,23 @@
 {
-	"HomePage_Title":{
-		"pageTitle":"Stock/Share Market Investing - Live BSE/NSE, India Stock Market Recommendations and Tips, Live Stock Markets, Sensex/Nifty, Commodity Market, Investment Portfolio, Financial News, Mutual Funds"
+	"MoneyControlPageTitle":{
+		"HomepageTitle":"Stock/Share Market Investing - Live BSE/NSE, India Stock Market Recommendations and Tips, Live Stock Markets, Sensex/Nifty, Commodity Market, Investment Portfolio, Financial News, Mutual Funds",
+		"EmergencyFundCalculatorPageTitle":"Emergency Fund Calculator: Contingency Funds, Emergency Savings Calculator, Disaster Emergency Fund Calculator",
+		"FixedDepositInterestCalculatorPageTitle":"FD Calculator | Calculate Fixed Deposit Interest Rates Online",
+		"ProvidentFundCalculatorPageTitle":"PF/Provident Fund Calculator: Employees Provident Fund Calculator, How much amount will you get on EPF withdrawal?, EPF Calculator, PF Interest Calculator"
 	},
-	"newTab_Title":{
-		"pageTitle":"Selenium"
+	"fixedDepositInterestCalculatorCalculatorForm":{
+		"InvestmentAmountValue":"3000000",
+		"InvestmentPeriodValue":"20",
+		"RateOfReturnValue":"20",
+		"TaxRateValue":"20"
+	},
+	"providentFundCalculatorForm":{
+		"yourBasicSalaryMonthly":"35000",
+		"contributioToEPF":"10",
+		"employersContributionToEPF":"30",
+		"avgIncreaseInSalaryYouExpect":"20",
+		"ageWhenYouIntendToRetire":"50",
+		"currentEpfBalanceIfAny":"50000",
+		"currentInterestRate":"10"
 	}
 }
