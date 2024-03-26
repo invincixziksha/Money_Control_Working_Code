@@ -15,7 +15,7 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="environment" value="dev" />
 		<classes>
-			<class name="testcases.Provident_Fund_Calculator_L1_TestCases2" />
+			<class name="testcases.Emergency_Fund_Calculator_L1_Testcase" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
