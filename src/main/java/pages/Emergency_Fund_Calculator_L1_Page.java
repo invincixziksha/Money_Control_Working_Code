@@ -54,20 +54,19 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method entermedicalDentalCost() 
 	 * @param : Map<String, String>
 	 * @description : enter medical Dental Cost
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean entermedicalDentalCost(Map<String, String> expectedData) throws Exception {
-		Boolean medicalDentalCostsTextFieldisFilled=false;
+	public String entermedicalDentalCost(Map<String, String> expectedData) throws Exception {
+		String medicalDentalCostsTextFieldValue="";
 		try {
 			commonEvents.sendKeys(medicalDentalCostsTextField,expectedData.get("MedicalDentalCostAmount"));
-			if(commonEvents.getAttribute(medicalDentalCostsTextField, "value").equals(expectedData.get("MedicalDentalCostAmount"))) {
-				medicalDentalCostsTextFieldisFilled = true;
-			}		
+			medicalDentalCostsTextFieldValue=commonEvents.getAttribute(medicalDentalCostsTextField, "value");
+			System.out.println("Medical Dental Cost is :" +medicalDentalCostsTextFieldValue);					
 			}catch(Exception e) {
 			throw e;
 		}	
-		return medicalDentalCostsTextFieldisFilled;
+		return medicalDentalCostsTextFieldValue;
 	}
 	
 	
@@ -75,16 +74,14 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method enterVehicleRepaircost() 
 	 * @param : Map<String, String>
 	 * @description : enter Vehicle Repair cost
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterVehicleRepaircost(Map<String, String> expectedData) throws Exception {
-		Boolean vehicleRepaircostTextFieldIsFilled=false;
+	public String enterVehicleRepaircost(Map<String, String> expectedData) throws Exception {
+		String vehicleRepaircostTextFieldIsFilled="";
 		try {
 			commonEvents.sendKeys(vehicleRepaircostTextField,expectedData.get("VehicleRepairCost"));
-			if(commonEvents.getAttribute(vehicleRepaircostTextField, "value").equals(expectedData.get("VehicleRepairCost"))) {
-				vehicleRepaircostTextFieldIsFilled = true;
-			}		
+			vehicleRepaircostTextFieldIsFilled=commonEvents.getAttribute(vehicleRepaircostTextField, "value");
 			}catch(Exception e) {
 			throw e;
 		}	
@@ -95,16 +92,14 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method enterVehicleRepaircost() 
 	 * @param : Map<String, String>
 	 * @description : enter Other Cost
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterOtherCost(Map<String, String> expectedData) throws Exception {
-		Boolean otherCostTextFieldIsFilled=false;
+	public String enterOtherCost(Map<String, String> expectedData) throws Exception {
+		String otherCostTextFieldIsFilled="";
 		try {
 			commonEvents.sendKeys(otherCostTextField,expectedData.get("OtherCosts"));
-			if(commonEvents.getAttribute(otherCostTextField, "value").equals(expectedData.get("OtherCosts"))) {
-				otherCostTextFieldIsFilled = true;
-			}		
+			otherCostTextFieldIsFilled=commonEvents.getAttribute(otherCostTextField, "value");				
 			}catch(Exception e) {
 			throw e;
 		}	
@@ -117,16 +112,14 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method enterVehicleRepaircost() 
 	 * @param : Map<String, String>
 	 * @description : enter Life Health Insurance Premium 
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterLifeHealthInsurancePremiumToBePaid(Map<String, String> expectedData) throws Exception {
-		Boolean lifeInsurancePremiumTextFieldIsFilled=false;
+	public String enterLifeHealthInsurancePremiumToBePaid(Map<String, String> expectedData) throws Exception {
+		String lifeInsurancePremiumTextFieldIsFilled="";
 		try {
 			commonEvents.sendKeys(lifeInsurancePremiumTextField,expectedData.get("lifeInsurancePremiumCost"));
-			if(commonEvents.getAttribute(lifeInsurancePremiumTextField, "value").equals(expectedData.get("lifeInsurancePremiumCost"))) {
-				lifeInsurancePremiumTextFieldIsFilled = true;
-			}		
+			lifeInsurancePremiumTextFieldIsFilled=commonEvents.getAttribute(lifeInsurancePremiumTextField, "value");		
 			}catch(Exception e) {
 			throw e;
 		}	
@@ -138,40 +131,37 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method enterHomeAndAutoInsurancePremiumTobePaid() 
 	 * @param : Map<String, String>
 	 * @description : enter Home And Auto Insurance Premium
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterHomeAndAutoInsurancePremiumTobePaid(Map<String, String> expectedData) throws Exception {
-		Boolean homeAndAutoInsurancePremiumTextFieldIsFilled=false;
+	public String enterHomeAndAutoInsurancePremiumTobePaid(Map<String, String> expectedData) throws Exception {
+		String homeAndAutoInsurancePremiumTextFieldValue="";
 		try {
 			commonEvents.sendKeys(homeAndAutoInsurancePremiumTextField,expectedData.get("homeAndAutoInsurancePremiumAmount"));
-			if(commonEvents.getAttribute(homeAndAutoInsurancePremiumTextField, "value").equals(expectedData.get("homeAndAutoInsurancePremiumAmount"))) {
-				homeAndAutoInsurancePremiumTextFieldIsFilled = true;
-			}		
+			homeAndAutoInsurancePremiumTextFieldValue=commonEvents.getAttribute(homeAndAutoInsurancePremiumTextField, "value");	
 			}catch(Exception e) {
 			throw e;
 		}	
-		return homeAndAutoInsurancePremiumTextFieldIsFilled;
+		return homeAndAutoInsurancePremiumTextFieldValue;
 	}
 	
 	/**@Test7
 	 * about this method enterHomeLoanAndOtherImportantEMIToBePaid() 
 	 * @param : Map<String, String>
 	 * @description : enter Home Loan And Other Important EMI
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterHomeLoanAndOtherImportantEMIToBePaid(Map<String, String> expectedData) throws Exception {
-		Boolean homeLoanAndOtherImportantEMIsTextFieldIsFilled=false;
+	public String enterHomeLoanAndOtherImportantEMIToBePaid(Map<String, String> expectedData) throws Exception {
+		String homeLoanAndOtherImportantEMIsTextFieldValue="";
 		try {
 			commonEvents.sendKeys(homeLoanAndOtherImportantEMIsTextField,expectedData.get("HomeLoanAndOtherImportantEMIsCost"));
-			if(commonEvents.getAttribute(homeLoanAndOtherImportantEMIsTextField, "value").equals(expectedData.get("HomeLoanAndOtherImportantEMIsCost"))) {
-				homeLoanAndOtherImportantEMIsTextFieldIsFilled = true;
-			 }		
+			homeLoanAndOtherImportantEMIsTextFieldValue=commonEvents.getAttribute(homeLoanAndOtherImportantEMIsTextField, "value");
+					
 			}catch(Exception e) {
 			throw e;
 		}	
-		return homeLoanAndOtherImportantEMIsTextFieldIsFilled;
+		return homeLoanAndOtherImportantEMIsTextFieldValue;
 	}
 	
 	
@@ -179,40 +169,37 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method enterMonthlylivingExpenses() 
 	 * @param : Map<String, String>
 	 * @description : enter Monthly living Expenses
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterMonthlylivingExpenses(Map<String, String> expectedData) throws Exception {
-		Boolean monthlyLivingExpensesTextFieldIsFilled=false;
+	public String enterMonthlylivingExpenses(Map<String, String> expectedData) throws Exception {
+		String monthlyLivingExpensesTextFieldValue="";
 		try {
 			commonEvents.sendKeys(monthlyLivingExpensesTextField,expectedData.get("monthlyLivingExpensesAmount"));
-			if(commonEvents.getAttribute(monthlyLivingExpensesTextField, "value").equals(expectedData.get("monthlyLivingExpensesAmount"))) {
-				monthlyLivingExpensesTextFieldIsFilled = true;
-			 }		
+			monthlyLivingExpensesTextFieldValue=commonEvents.getAttribute(monthlyLivingExpensesTextField, "value");	
 			}catch(Exception e) {
 			throw e;
 		}	
-		return monthlyLivingExpensesTextFieldIsFilled;
+		return monthlyLivingExpensesTextFieldValue;
 	}
 	
 	/**@Test9
 	 * about this method enterNumberofMonthsIfUnemployed() 
 	 * @param : Map<String, String>
 	 * @description : enter Number of Months If Unemployed
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterNumberofMonthsIfUnemployed(Map<String, String> expectedData) throws Exception {
-		Boolean monthUnemployedTextFieldIsFilled=false;
+	public String enterNumberofMonthsIfUnemployed(Map<String, String> expectedData) throws Exception {
+		String monthUnemployedTextFieldValue="";
 		try {
 			commonEvents.sendKeys(monthUnemployedTextField,expectedData.get("monthUnemployedData"));
-			if(commonEvents.getAttribute(monthUnemployedTextField, "value").equals(expectedData.get("monthUnemployedData"))) {
-				monthUnemployedTextFieldIsFilled = true;
-			 }		
+			monthUnemployedTextFieldValue=commonEvents.getAttribute(monthUnemployedTextField, "value");
+				
 			}catch(Exception e) {
 			throw e;
 		}	
-		return monthUnemployedTextFieldIsFilled;
+		return monthUnemployedTextFieldValue;
 	}
 	
 	/**@Test10
@@ -239,77 +226,76 @@ public class Emergency_Fund_Calculator_L1_Page extends StartupPage {
 	 * about this method checkUninsuredEmergencyAmountrequired() 
 	 * @param : null
 	 * @description : check Uninsured Emergency Amount required
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean checkUninsuredEmergencyAmountrequired() throws Exception {
-		Boolean uninsuredOrUnexpectedEmergenciesFieldIsDisplayed=false;
+	public String checkUninsuredEmergencyAmountrequired() throws Exception {
+		String uninsuredOrUnexpectedEmergenciesFieldValue="";
 		try {
-			if(commonEvents.isDisplayed(uninsuredOrUnexpectedEmergenciesField))
-			{
-				uninsuredOrUnexpectedEmergenciesFieldIsDisplayed = true;  }
+			    commonEvents.isDisplayed(uninsuredOrUnexpectedEmergenciesField);
+				uninsuredOrUnexpectedEmergenciesFieldValue=commonEvents.getText(uninsuredOrUnexpectedEmergenciesField);
+				System.out.println("Uninsured Or Unexpected Amount: "+uninsuredOrUnexpectedEmergenciesFieldValue);
 			}catch(Exception e) {
 			throw e;
 		}	
-		return uninsuredOrUnexpectedEmergenciesFieldIsDisplayed;
+		return uninsuredOrUnexpectedEmergenciesFieldValue;
 	}
 	
 	/**@Test12
 	 * about this method checkAnnualAmountOfFixedPaymentsToBedone() 
 	 * @param : null
 	 * @description : check annual Amount Of Fixed Payments Field is displayed
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean checkAnnualAmountOfFixedPaymentsToBedone() throws Exception {
-		Boolean annualAmountOfFixedPaymentsFieldIsDisplayed=false;
+	public String checkAnnualAmountOfFixedPaymentsToBedone() throws Exception {
+		String annualAmountOfFixedPaymentsFieldValue="";
 		try {
-			if(commonEvents.isDisplayed(annualAmountOfFixedPaymentsField))
-			{
-				annualAmountOfFixedPaymentsFieldIsDisplayed = true;  }
+			commonEvents.isDisplayed(annualAmountOfFixedPaymentsField);
+			annualAmountOfFixedPaymentsFieldValue=commonEvents.getText(annualAmountOfFixedPaymentsField);
+			System.out.println("Annual amount of fixed payments: "+annualAmountOfFixedPaymentsFieldValue);
 			}catch(Exception e) {
 			throw e;
 		}	
-		return annualAmountOfFixedPaymentsFieldIsDisplayed;
+		return annualAmountOfFixedPaymentsFieldValue;
 	}
 	
 	/**@Test13
 	 * about this method checkTotalAmountOfReserveToBeBuild() 
 	 * @param : null
 	 * @description : check build Reserve To Pay For Job Loss Field is diplayed
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean checkTotalAmountOfReserveToBeBuild() throws Exception {
-		Boolean buildReserveToPayForJobLossFieldIsDisplayed=false;
+	public String checkTotalAmountOfReserveToBeBuild() throws Exception {
+		String buildReserveToPayForJobLossFieldValue="";
 		try {
-			if(commonEvents.isDisplayed(buildReserveToPayForJobLossField))
-			{
-				buildReserveToPayForJobLossFieldIsDisplayed = true;  }
-			}catch(Exception e) {
+			commonEvents.isDisplayed(buildReserveToPayForJobLossField);
+			buildReserveToPayForJobLossFieldValue=commonEvents.getText(buildReserveToPayForJobLossField);
+			System.out.println("Build a reserve to pay for job loss Amount: "+buildReserveToPayForJobLossFieldValue);
+		   }
+			catch(Exception e) {
 			throw e;
 		}	
-		return buildReserveToPayForJobLossFieldIsDisplayed;
+		return buildReserveToPayForJobLossFieldValue;
 	}
 	
 	/**@Test14
 	 * about this method checktheResult() 
 	 * @param : null
 	 * @description : check the result is present or not and print the result
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean checktheResult() throws Exception {
-		Boolean resultFieldIsDisplayed=false;
+	public String checktheResult() throws Exception {
+		String resultFieldValue="";
 		try {
-			if(commonEvents.isDisplayed(resultField))
-			{
-				String result=commonEvents.getText(resultField);
-				System.out.println("Total Result is :" +result);
-				resultFieldIsDisplayed = true;  }
+			    commonEvents.isDisplayed(resultField);
+				resultFieldValue=commonEvents.getText(resultField);
+				System.out.println("Total Result is :" +resultFieldValue);
 			}catch(Exception e) {
 			throw e;
 		}	
-		return resultFieldIsDisplayed;
+		return resultFieldValue;
 	}
 }

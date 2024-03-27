@@ -74,39 +74,37 @@ public class Emi_Calculator_L1_Pages extends StartupPage{
 	 * @return : boolean
 	 * @author : Yaksha
 	 */
-	public boolean entertheLoadAmountAs3000000(Map<String, String> expectedData) throws Exception {
-		Boolean loanAmountTextFieldIsFilled=false;
+	public String entertheLoadAmountAs3000000(Map<String, String> expectedData) throws Exception {
+		String loanAmountTextFieldValue="";
 		try {
 			commonEvents.clear(loanAmountTextField);
 			commonEvents.sendKeys(loanAmountTextField,expectedData.get("LoanAmount"));
-			if(commonEvents.getAttribute(loanAmountTextField, "value").equals(expectedData.get("LoanAmount"))) {
-				loanAmountTextFieldIsFilled = true;
-			}		
+			loanAmountTextFieldValue=commonEvents.getAttribute(loanAmountTextField, "value");
+					
 		}catch(Exception e) {
 			throw e;
 		}	
-		return loanAmountTextFieldIsFilled;
+		return loanAmountTextFieldValue;
 	}
 	
 	/**@Test4
 	 * about this method enterTheLoadPeriodAs20() 
 	 * @param : Map<String, String>
 	 * @description : clear the data in the Load Period TextField enter The Load Period As 20
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterTheLoadPeriodAs20(Map<String, String> expectedData) throws Exception {
-		Boolean loanPeriodTextFieldIsFilled=false;
+	public String enterTheLoanPeriodAs20(Map<String, String> expectedData) throws Exception {
+		String loanPeriodTextFieldValue="";
 		try {
 			commonEvents.clear(loanPeriodTextField);
 			commonEvents.sendKeys(loanPeriodTextField,expectedData.get("LoanPeriod"));
-			if(commonEvents.getAttribute(loanPeriodTextField, "value").equals(expectedData.get("LoanPeriod"))) {
-				loanPeriodTextFieldIsFilled = true;
-			}		
+			loanPeriodTextFieldValue=commonEvents.getAttribute(loanPeriodTextField, "value");
+				
 		}catch(Exception e) {
 			throw e;
 		}	
-		return loanPeriodTextFieldIsFilled;
+		return loanPeriodTextFieldValue;
 	}
 	
 	/**@Test5
@@ -116,18 +114,16 @@ public class Emi_Calculator_L1_Pages extends StartupPage{
 	 * @return : boolean
 	 * @author : Yaksha
 	 */
-	public boolean enterInterestRateAs10_5(Map<String, String> expectedData) throws Exception {
-		Boolean interestRateTextFieldIsFilled=false;
+	public String enterInterestRateAs10_5(Map<String, String> expectedData) throws Exception {
+		String interestRateTextFieldValue="";
 		try {
 			commonEvents.clear(interestRateTextField);
 			commonEvents.sendKeys(interestRateTextField,expectedData.get("interestRate"));
-			if(commonEvents.getAttribute(interestRateTextField, "value").equals(expectedData.get("interestRate"))) {
-				interestRateTextFieldIsFilled = true;
-			}		
+			interestRateTextFieldValue=commonEvents.getAttribute(interestRateTextField, "value");		
 		}catch(Exception e) {
 			throw e;
 		}	
-		return interestRateTextFieldIsFilled;
+		return interestRateTextFieldValue;
 	}
 	
 	/**@Test6
@@ -137,14 +133,13 @@ public class Emi_Calculator_L1_Pages extends StartupPage{
 	 * @return : boolean
 	 * @author : Yaksha
 	 */
-	public boolean enterUpfrontChargesAs10000(Map<String, String> expectedData) throws Exception {
-		Boolean upfrontChargesTextFieldIsFilled=false;
+	public String enterUpfrontChargesAs10000(Map<String, String> expectedData) throws Exception {
+		String upfrontChargesTextFieldIsFilled="";
 		try {
 			commonEvents.clear(upfrontChargesTextField);
 			commonEvents.sendKeys(upfrontChargesTextField,expectedData.get("upfrontCharges"));
-			if(commonEvents.getAttribute(upfrontChargesTextField, "value").equals(expectedData.get("upfrontCharges"))) {
-				upfrontChargesTextFieldIsFilled = true;
-			}		
+			upfrontChargesTextFieldIsFilled=commonEvents.getAttribute(upfrontChargesTextField, "value");
+					
 		}catch(Exception e) {
 			throw e;
 		}	

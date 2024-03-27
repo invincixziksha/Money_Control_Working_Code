@@ -28,7 +28,11 @@
 		"homeAndAutoInsurancePremiumAmount":"60000",
 		"HomeLoanAndOtherImportantEMIsCost":"70000",
 		"monthlyLivingExpensesAmount":"90000",
-		"monthUnemployedData":"11"
+		"monthUnemployedData":"11",
+		"Uninsured or unexpected emergencies Amount":"1,80,000",
+		"Annual amount of fixed payments":"1,80,000",
+		"Build a reserve to pay for job loss":"9,90,000",
+		"ResultValue":"Rs 13,50,000"
 	},
 	"ValuesForEMICalculator":{
 		"LoanAmount":"3000000",
@@ -37,7 +41,7 @@
 		"upfrontCharges":"10000"
 	},
 	"ValuesForLogInAutomation":{
-		"emailId":"Test@gmail.com",
+		"emailId":"Test123678@gmail.com",
 		"password":"1234578",
 		"ValidEmailId":"surya.prakash@invincix.in",
 		"validPassword":"Abhi@123456"
