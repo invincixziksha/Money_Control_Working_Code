@@ -23,7 +23,7 @@ public class Login_Automation_L1_Testcases extends AppTestBase
 	String expectedDataFilePath = testDataFilePath+"expected_data.json";
 	StartupPage startupPage;
 	Login_Automation_L1_Pages logInAutomationPageInstance;
-	LocatorsFactory LocatorsFactoryInstance=new LocatorsFactory(driver);
+	LocatorsFactory locatorsFactoryInstance;
 	
 	
 	@Parameters({"browser", "environment"})
@@ -41,47 +41,60 @@ public class Login_Automation_L1_Testcases extends AppTestBase
 	@Test(priority = 1, groups = {"sanity"}, description="Open the Login Panel")
 	public void openTheLoginPanel() throws Exception {
 		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
 		Assert.assertTrue(logInAutomationPageInstance.openTheLoginPanelByClickingOnLogin(),"Hello & login button is not present in the current page, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.loginButtonIsPresent(driver).isDisplayed(), "Login button is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.loginButtonIsPresent(driver).isDisplayed(), "Login button is not present in the current page, Please check manually");
 	}
 	@Test(priority = 2, groups = {"sanity"}, description="Switch to Log-in Iframe")
 	public void switchToSigninIframe() throws Exception {
 		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
+
 		Assert.assertTrue(logInAutomationPageInstance.clickOnLoginAndswitchToSigninIframe(),"Login button is not present in the current page, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.loginWithOtpButtonIsPresent(driver).isDisplayed(), "Login button With Otp Button is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.loginWithOtpButtonIsPresent(driver).isDisplayed(), "Login button With Otp Button is not present in the current page, Please check manually");
 	}
 	
 	@Test(priority = 3, groups = {"sanity"}, description="Open Login with password Box")
 	public void openLoginWithPasswordBox() throws Exception {
 		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
+
 		Assert.assertTrue(logInAutomationPageInstance.openLoginWithPasswordbox(),"Login With Password box is not present in the current page, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.emailIdFieldIsPresent(driver).isDisplayed(), "EmailId Field is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.emailIdFieldIsPresent(driver).isDisplayed(), "EmailId Field is not present in the current page, Please check manually");
 	}
 	@Test(priority = 4, groups = {"sanity"}, description="Enter Email & Password in Login Box")
 	public void enterEmailAndPasswordInLoginBox() throws Exception {
 		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
+
 		String expectedDataFilePath = testDataFilePath+"expected_data.json";
 		Map<String, String> expectedData = new FileOperations().readJson(expectedDataFilePath, "ValuesForLogInAutomation");
-		Assert.assertTrue(logInAutomationPageInstance.enterEmailandPasswordInLoginBox(expectedData),"Email and Password button is not present in the current page, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.forgotPasswordIsPresent(driver).isDisplayed(), "forgot Password is not present in the current page, Please check manually");
+		Assert.assertEquals(logInAutomationPageInstance.enterEmailandPasswordInLoginBox(expectedData),expectedData.get("password"),"Email and Password button is not present in the current page, Please check manually") ;	
+		Assert.assertEquals(locatorsFactoryInstance.forgotPasswordValueIsPresent(),expectedData.get("password") ,"forgot Password value is not present in the current page, Please check manually");
 	}
 	@Test(priority = 5, groups = {"sanity"}, description="Click on the login button")
 	public void clickOnTheLoginButton() throws Exception {
+		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
 		Assert.assertTrue(logInAutomationPageInstance.clickOnLoginButton(),"Login button is not present in the current page, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.errorMessageIsPresent(driver).isDisplayed(), "Error Message is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.errorMessageIsPresent(driver).isDisplayed(), "Error Message is not present in the current page, Please check manually");
 	}
 	@Test(priority = 6, groups = {"sanity"}, description="Check for failure Login and validate the error message")
 	public void checkforFailureLogin() throws Exception {
+		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
 		Map<String, String> expectedData = new FileOperations().readJson(expectedDataFilePath, "ErrorMessages");
 		Assert.assertEquals(logInAutomationPageInstance.checkforFailureLoginValidateTheErrorMessage(),expectedData.get("invalidUserNameAndPassword")) ;	
-		Assert.assertTrue(LocatorsFactoryInstance.errorMessageIsPresent(driver).isDisplayed(), "Error Message is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.errorMessageIsPresent(driver).isDisplayed(), "Error Message is not present in the current page, Please check manually");
 	}
 	@Test(priority = 7, groups = {"sanity"}, description="Check for success Login")
 	public void checkforSuccessLogin() throws Exception {
+		logInAutomationPageInstance = new Login_Automation_L1_Pages(driver);
+		locatorsFactoryInstance=new LocatorsFactory(driver);
 		String expectedDataFilePath = testDataFilePath+"expected_data.json";
 		Map<String, String> expectedData = new FileOperations().readJson(expectedDataFilePath, "ValuesForLogInAutomation");
 		Assert.assertTrue(logInAutomationPageInstance.provideValidUserNameAndPasswordAndValidate(expectedData),"Login Failed, Please check manually") ;	
-		Assert.assertTrue(LocatorsFactoryInstance.logInButtonAtRightTopCornerIsPresent(driver).isDisplayed(), "Login button is not present in the current page, Please check manually");
+		Assert.assertTrue(locatorsFactoryInstance.userNameAtRightTopCornerIsPresent(driver).isDisplayed(), "User Name is not present in the current page, Please check manually");
 	}
 	
 	@AfterClass(alwaysRun = true)

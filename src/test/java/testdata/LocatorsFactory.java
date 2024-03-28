@@ -6,11 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import coreUtilities.utils.CommonEvents;
 import pages.StartupPage;
 
 public class LocatorsFactory extends StartupPage {
 	//please write all the locators for Money Control page only 
-
+	
 	By fixedDepositCalculatorHeader = By.xpath("//h2[contains(text(), 'Fixed Deposit Calculator')]");
 	By investmentAmountTextfield = By.xpath("//input[@class='valueinput']");
 	By investmentPeriodTextfield = By.xpath("//input[@id='edulonvalue_2']");
@@ -23,8 +24,8 @@ public class LocatorsFactory extends StartupPage {
 	By totalPaymentResultButton = By.xpath("//div[contains(text(), 'Total Payment')]");
 	By totalCorpusResultButton = By.xpath("//div[contains(text(), 'Total Corpus')]");
 	By totalTaxAmountResultButton = By.xpath("//div[contains(text(), 'Post Tax Amount')]");
-	
 	By providentFundCalculatorHeader = By.xpath("//strong[contains(text(), 'PF - Provident Fund Calculator')]"); 
+
 	By personalFinanceNavigationMenu = By.xpath("//nav[@class='navbg']//li[@cid='8']//a[contains(text(), 'Personal Finance')]");
 	By providentFundCalculatorLink = By.xpath("//a[contains(text(), 'Provident Fund Calculator')]");
 	By basicMonthlySalaryTextfield = By.xpath("//input[@name='basic_salary_monthly']");
@@ -49,7 +50,6 @@ public class LocatorsFactory extends StartupPage {
 	By loanAmountTextField=By.xpath("//input[@id='carhome_loan']");
 	By loanPeriodTextField=By.xpath("//input[@id='loan_period']");
     By interestRateTextField=By.id("interest_rate"); 
-//    By resetButton=By.xpath("//a[.='Reset']");
     By emiReadOnlyField=By.id("emi");
     By OutstandingPrincipalAtEndOfYear=By.xpath("//div[@class='table_container table-responsive']//tr[5]//td[2]");
     By emiPaymentInTheYear=By.xpath("//div[@class='table_container table-responsive']//tr[7]//td[3]");
@@ -65,11 +65,16 @@ public class LocatorsFactory extends StartupPage {
 	By annualAmountOfFixedPaymentsField=By.xpath("//div[@id='insurance']");
 	By buildReserveToPayForJobLossField=By.id("unemploy");
 	By resultField=By.xpath("//span[.='Rs 13,50,000']");
-	
+	By otherCostTextField=By.xpath("//input[@name='others']");
+	By homeAndAutoInsurancePremiumTextField=By.xpath("//input[@name='medical_insurance_premium']");
+    By passwordField=By.xpath("(//input[@name='pwd'])[2]");
+    By upfrontChargesTextField=By.id("upfront_charges");
+    By emiPaymentInTheYearField=By.xpath("//th[.='EMI Payment in the year']");
+    By interestPaymentInTheYearField=By.xpath("//th[.='Interest Payment in the year']");
 
 	public LocatorsFactory(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+
 	}
 
 
@@ -148,27 +153,7 @@ public class LocatorsFactory extends StartupPage {
 		return commoditiesWebElement; 
 	}
 	
-	public WebElement medicalDentalCostsTextFieldIsPresent(WebDriver driver) {
-		WebElement medicalDentalCostsTextFieldWebElement = driver.findElement(medicalDentalCostsTextField);
-		return medicalDentalCostsTextFieldWebElement; 
-	}
 	
-	public WebElement vehicleRepaircostTextFieldIsPresent(WebDriver driver) {
-		WebElement vehicleRepaircostTextFieldWebElement = driver.findElement(vehicleRepaircostTextField);
-		return vehicleRepaircostTextFieldWebElement; 
-	}
-	public WebElement lifeInsurancePremiumTextFieldIsPresent(WebDriver driver) {
-		WebElement lifeInsurancePremiumTextFieldWebElement = driver.findElement(lifeInsurancePremiumTextField);
-		return lifeInsurancePremiumTextFieldWebElement; 
-	}
-	public WebElement homeLoanAndOtherImportantEMIsTextFieldIsPresent(WebDriver driver) {
-		WebElement homeLoanAndOtherImportantEMIsTextFieldWebElement = driver.findElement(homeLoanAndOtherImportantEMIsTextField);
-		return homeLoanAndOtherImportantEMIsTextFieldWebElement; 
-	}
-	public WebElement monthlyLivingExpensesTextFieldIsPresent(WebDriver driver) {
-		WebElement monthlyLivingExpensesTextFieldWebElement = driver.findElement(monthlyLivingExpensesTextField);
-		return monthlyLivingExpensesTextFieldWebElement; 
-	}
 	public WebElement monthUnemployedTextFieldIsPresent(WebDriver driver) {
 		WebElement monthUnemployedTextFielddWebElement = driver.findElement(monthUnemployedTextField);
 		return monthUnemployedTextFielddWebElement; 
@@ -181,14 +166,7 @@ public class LocatorsFactory extends StartupPage {
 		WebElement loanAmountTextFieldWebelement = driver.findElement(loanAmountTextField);
 		return loanAmountTextFieldWebelement; 
 	}
-	public WebElement loanPeriodTextFieldIsPresent(WebDriver driver) {
-		WebElement loanPeriodTextFieldWebElement = driver.findElement(loanPeriodTextField);
-		return loanPeriodTextFieldWebElement; 
-	}
-	public WebElement interestRateTextFieldIsPresent(WebDriver driver) {
-		WebElement interestRateTextFieldWebElement = driver.findElement(interestRateTextField);
-		return interestRateTextFieldWebElement; 
-	}
+	
 	public WebElement resetButtonIsPresent(WebDriver driver) {
 		WebElement resetButtonWebElement = driver.findElement(resetButton);
 		return resetButtonWebElement; 
@@ -198,13 +176,13 @@ public class LocatorsFactory extends StartupPage {
 		WebElement emiReadOnlyFieldWebElement = driver.findElement(emiReadOnlyField);
 		return emiReadOnlyFieldWebElement; 
 	}
-	public WebElement OutstandingPrincipalAtEndOfYearIsPresent(WebDriver driver) {
-		WebElement OutstandingPrincipalAtEndOfYearWebElement = driver.findElement(OutstandingPrincipalAtEndOfYear);
-		return OutstandingPrincipalAtEndOfYearWebElement; 
+	public WebElement emiPaymentInTheYearFieldIsPresent(WebDriver driver) {
+		WebElement emiPaymentInTheYearFieldWebElement = driver.findElement(emiPaymentInTheYearField);
+		return emiPaymentInTheYearFieldWebElement; 
 	}
-	public WebElement emiPaymentInTheYearIsPresent(WebDriver driver) {
-		WebElement emiPaymentInTheYearWebElement = driver.findElement(emiPaymentInTheYear);
-		return emiPaymentInTheYearWebElement; 
+	public WebElement interestPaymentInTheYearFieldIsPresent(WebDriver driver) {
+		WebElement interestPaymentInTheYearFieldWebElement = driver.findElement(interestPaymentInTheYearField);
+		return interestPaymentInTheYearFieldWebElement; 
 	}
 	public WebElement loginButtonIsPresent(WebDriver driver) {
 		WebElement loginButtonWebElement = driver.findElement(loginButton);
@@ -233,7 +211,7 @@ public class LocatorsFactory extends StartupPage {
 		return forgotPasswordWebElement; 
 	}
 	
-	public WebElement logInButtonAtRightTopCornerIsPresent(WebDriver driver) {
+	public WebElement userNameAtRightTopCornerIsPresent(WebDriver driver) {
 		WebElement logInButtonAtRightTopCornerWebElement = driver.findElement(logInButtonAtRightTopCorner);
 		return logInButtonAtRightTopCornerWebElement; 
 	}
@@ -430,6 +408,210 @@ public class LocatorsFactory extends StartupPage {
 	
 	public WebElement youWillHaveAccumulatedTextIsPresent(WebDriver driver) {
 		WebElement youWillHaveAccumulatedTextWebelement = driver.findElement(youWillHaveAccumulatedText);
-		return youWillHaveAccumulatedTextWebelement; 
+		return youWillHaveAccumulatedTextWebelement;
+	}
+
+	public String medicalDentalCostsValueIsPresent()throws Exception {
+		String medicalDentalCostsTextFieldValue="";
+		try
+		{
+		medicalDentalCostsTextFieldValue=commonEvents.getAttribute(medicalDentalCostsTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return medicalDentalCostsTextFieldValue;
+	}
+	
+	public String vehicleRepaircostValueIsPresent()throws Exception {
+		String vehicleRepaircostValueIsPresentTextFieldValue="";
+		try
+		{
+			vehicleRepaircostValueIsPresentTextFieldValue=commonEvents.getAttribute(vehicleRepaircostTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return vehicleRepaircostValueIsPresentTextFieldValue;
+	}
+	
+	public String otherCostTextFieldValueIsPresent()throws Exception {
+		String otherCostTextFieldValue="";
+		try
+		{
+			otherCostTextFieldValue=commonEvents.getAttribute(otherCostTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return otherCostTextFieldValue;
+	}
+	
+	public String lifeInsurancePremiumTextFieldValueIsPresent()throws Exception {
+		String lifeInsurancePremiumTextFieldValue="";
+		try
+		{
+			lifeInsurancePremiumTextFieldValue=commonEvents.getAttribute(lifeInsurancePremiumTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return lifeInsurancePremiumTextFieldValue;
+	}
+	
+	public String homeAndAutoInsurancePremiumextFieldValueIsPresent()throws Exception {
+		String homeAndAutoInsurancePremiumextFieldValue="";
+		try
+		{
+			homeAndAutoInsurancePremiumextFieldValue=commonEvents.getAttribute(homeAndAutoInsurancePremiumTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return homeAndAutoInsurancePremiumextFieldValue;
+	}
+	
+	public String homeLoanAndOtherImportantEMIsTextFieldValueIsPresent()throws Exception {
+		String homeLoanAndOtherImportantEMIsTextFieldValue="";
+		try
+		{
+			homeLoanAndOtherImportantEMIsTextFieldValue=commonEvents.getAttribute(homeLoanAndOtherImportantEMIsTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return homeLoanAndOtherImportantEMIsTextFieldValue;
+	}
+	
+	public String monthlyLivingExpensesTextFieldValueIsPresent()throws Exception {
+		String monthlyLivingExpensesTextFieldValue="";
+		try
+		{
+			monthlyLivingExpensesTextFieldValue=commonEvents.getAttribute(monthlyLivingExpensesTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return monthlyLivingExpensesTextFieldValue;
+	}
+	
+	public String monthUnemployedTextFieldValueIsPresent()throws Exception {
+		String monthUnemployedTextFieldValue="";
+		try
+		{
+			monthUnemployedTextFieldValue=commonEvents.getAttribute(monthUnemployedTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return monthUnemployedTextFieldValue;
+	}
+	
+	public String uninsuredOrUnexpectedEmergenciesFieldValueIsPresent()throws Exception {
+		String uninsuredOrUnexpectedEmergenciesFieldValue="";
+		try
+		{
+			uninsuredOrUnexpectedEmergenciesFieldValue=commonEvents.getText(uninsuredOrUnexpectedEmergenciesField);
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return uninsuredOrUnexpectedEmergenciesFieldValue;
+	}
+	
+	public String annualAmountOfFixedPaymentsFieldValueIsPresent()throws Exception {
+		String annualAmountOfFixedPaymentsFieldValue="";
+		try
+		{
+			annualAmountOfFixedPaymentsFieldValue=commonEvents.getText(annualAmountOfFixedPaymentsField);
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return annualAmountOfFixedPaymentsFieldValue;
+	}
+	
+	public String buildReserveToPayForJobLossFieldValueIsPresent()throws Exception {
+		String buildReserveToPayForJobLossFieldValue="";
+		try
+		{
+			buildReserveToPayForJobLossFieldValue=commonEvents.getText(buildReserveToPayForJobLossField);
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return buildReserveToPayForJobLossFieldValue;
+	}
+	
+	public String resultValueIsPresent()throws Exception {
+		String resultValue="";
+		try
+		{
+			resultValue=commonEvents.getText(resultField);
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return resultValue;
+	}
+	
+	public String forgotPasswordValueIsPresent()throws Exception {
+		String  forgotPasswordValue="";
+		try
+		{
+			 forgotPasswordValue=commonEvents.getAttribute(passwordField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return forgotPasswordValue;
+	}
+	
+	public String loanAmountTextFieldValueIsPresent()throws Exception {
+		String  loanAmountTextFieldValue="";
+		try
+		{
+			loanAmountTextFieldValue=commonEvents.getAttribute(loanAmountTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return loanAmountTextFieldValue;
+	}
+	
+	public String loanPeriodTextFieldValueIsPresent()throws Exception {
+		String  loanPeriodTextFieldValue="";
+		try
+		{
+			loanPeriodTextFieldValue=commonEvents.getAttribute(loanPeriodTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return loanPeriodTextFieldValue;
+	}
+	
+	public String interestRateTextFieldValueIsPresent()throws Exception {
+		String  interestRateTextFieldValue="";
+		try
+		{
+			interestRateTextFieldValue=commonEvents.getAttribute(interestRateTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return interestRateTextFieldValue;
+	}
+	
+	public String upfrontChargesTextFieldValueIsPresent()throws Exception {
+		String  upfrontChargesTextFieldValue="";
+		try
+		{
+			upfrontChargesTextFieldValue=commonEvents.getAttribute(upfrontChargesTextField, "value");
+		}
+		catch(Exception e) {
+			throw e;
+		}	
+		return upfrontChargesTextFieldValue;
 	}
 }

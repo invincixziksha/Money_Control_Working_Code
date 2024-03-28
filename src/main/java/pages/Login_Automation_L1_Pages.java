@@ -89,22 +89,21 @@ public class Login_Automation_L1_Pages extends StartupPage{
 	 * about this method enterEmailandPasswordInLoginBox() 
 	 * @param : Map<String, String>
 	 * @description : enter Email and Password In LoginBox
-	 * @return : boolean
+	 * @return : String
 	 * @author : Yaksha
 	 */
-	public boolean enterEmailandPasswordInLoginBox(Map<String, String> expectedData) throws Exception {
-		Boolean passwordFieldIsFilled=false;
+	public String enterEmailandPasswordInLoginBox(Map<String, String> expectedData) throws Exception {
+		String passwordFieldValue="";
 		try {
 			commonEvents.sendKeys(emailIdField,expectedData.get("emailId"));
 			commonEvents.sendKeys(passwordField,expectedData.get("password"));
 
-			if(commonEvents.getAttribute(passwordField, "value").equals(expectedData.get("password"))) {
-				passwordFieldIsFilled = true;
-			}		
+			passwordFieldValue=commonEvents.getAttribute(passwordField, "value");
+			
 		}catch(Exception e) {
 			throw e;
 		}	
-		return passwordFieldIsFilled;
+		return passwordFieldValue;
 	}
 	
 	/**@Test5
