@@ -103,7 +103,7 @@ public class Fixed_Deposit_Interest_Calculator_L1_Pages extends StartupPage
 			commonEvents.clear(investmentAmountTextfield);
 			commonEvents.sendKeys(investmentAmountTextfield,expectedData.get("InvestmentAmountValue"));
 			investmentAmountTextfieldValue = commonEvents.getAttribute(investmentAmountTextfield, "value");
-			System.out.println("basic monthly salary : " + investmentAmountTextfieldValue);
+			System.out.println("investment value in pages class : " + investmentAmountTextfieldValue);
 			Thread.sleep(2000);
 			}
 		}catch(Exception e) {
@@ -127,7 +127,7 @@ public class Fixed_Deposit_Interest_Calculator_L1_Pages extends StartupPage
 			commonEvents.clear(investmentPeriodTextfield);
 			commonEvents.sendKeys(investmentPeriodTextfield,expectedData.get("InvestmentPeriodValue"));
 			investmentPeriodTextfieldValue = commonEvents.getAttribute(investmentPeriodTextfield, "value");
-			System.out.println("basic monthly salary : " + investmentPeriodTextfieldValue);
+			System.out.println("investment period value : " + investmentPeriodTextfieldValue);
 			Thread.sleep(2000);
 			}
 		}catch(Exception e) {
@@ -151,7 +151,7 @@ public class Fixed_Deposit_Interest_Calculator_L1_Pages extends StartupPage
 			commonEvents.clear(rateOfReturnTextfield);
 			commonEvents.sendKeys(rateOfReturnTextfield,expectedData.get("RateOfReturnValue"));
 			rateOfReturnTextfieldValue = commonEvents.getAttribute(rateOfReturnTextfield, "value");
-			System.out.println("basic monthly salary : " + rateOfReturnTextfieldValue);
+			System.out.println("rate of return value : " + rateOfReturnTextfieldValue);
 			Thread.sleep(2000);
 			}
 		}catch(Exception e) {
@@ -195,7 +195,7 @@ public class Fixed_Deposit_Interest_Calculator_L1_Pages extends StartupPage
 			commonEvents.clear(taxRateTextfield);
 			commonEvents.sendKeys(taxRateTextfield,expectedData.get("TaxRateValue"));
 			taxRateTextfieldValue = commonEvents.getAttribute(taxRateTextfield, "value");
-			System.out.println("basic monthly salary : " + taxRateTextfieldValue);
+			System.out.println("tax rate value : " + taxRateTextfieldValue);
 			Thread.sleep(2000);
 			}
 		}catch(Exception e) {

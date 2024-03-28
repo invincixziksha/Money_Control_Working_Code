@@ -1,5 +1,7 @@
 package testdata;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +25,18 @@ public class LocatorsFactory extends StartupPage {
 	By totalTaxAmountResultButton = By.xpath("//div[contains(text(), 'Post Tax Amount')]");
 	
 	By providentFundCalculatorHeader = By.xpath("//strong[contains(text(), 'PF - Provident Fund Calculator')]"); 
-	
+	By personalFinanceNavigationMenu = By.xpath("//nav[@class='navbg']//li[@cid='8']//a[contains(text(), 'Personal Finance')]");
+	By providentFundCalculatorLink = By.xpath("//a[contains(text(), 'Provident Fund Calculator')]");
+	By basicMonthlySalaryTextfield = By.xpath("//input[@name='basic_salary_monthly']");
+	By contributionToEPFTextfield = By.xpath("//input[@name='your_contribution']");
+	By employersContributionToEPFTextfield = By.xpath("//input[@name='employers_contribuion']");
+	By avgIncreaseInSalaryYouExpectTextfield = By.xpath("//input[@name='annual_increase_in_salary']");
+	By ageWhenYouIntendToRetireTextfield = By.xpath("//input[@name='intend_to_retire']");
+	By currentEpfBalanceIfAnyTextfield = By.xpath("//input[@name='current_epf_balance']");
+	By currentInterestRateTextfield = By.xpath("//input[@name='current_interest_rate']");
+	By calculateButton = By.xpath("//img[contains(@src, 'calculate')]");
+	By totalAmountByTheTimeYouRetireElement = By.xpath("//div[@id='result_epf']//span[@style='color:#ff6600;']");
+	By youWillHaveAccumulatedText = By.xpath("//span[contains(text(), 'You will have accumulated')]");
 	
 	By commodities = By.xpath("(//a[@title='Commodities'])[1]"); 
 	By medicalDentalCostsTextField=By.xpath("//input[@name='medical_dental_costs']");
@@ -243,5 +256,180 @@ public class LocatorsFactory extends StartupPage {
 	public WebElement resultFieldIsPresent(WebDriver driver) {
 		WebElement resultFieldWebElement = driver.findElement(resultField);
 		return resultFieldWebElement; 
+	}
+	
+	public String verifyEnteredInvestmentAmountIsPresent() throws Exception {
+		String investmentAmountTextfieldValue = "";
+		try {
+			if(commonEvents.isDisplayed(investmentAmountTextfield))
+			{
+			investmentAmountTextfieldValue = commonEvents.getAttribute(investmentAmountTextfield, "value");
+			System.out.println("investment value in locators factory : " + investmentAmountTextfieldValue);
+			Thread.sleep(2000);	
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return investmentAmountTextfieldValue;
+	}
+	
+	public String verifyEnteredInvestmentPeriodIsPresent() throws Exception {
+		String investmentPeriodTextfieldValue = "";
+		try {
+			if(commonEvents.isDisplayed(investmentPeriodTextfield))
+			{
+			investmentPeriodTextfieldValue = commonEvents.getAttribute(investmentPeriodTextfield, "value");
+			System.out.println("investment period value : " + investmentPeriodTextfieldValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return investmentPeriodTextfieldValue;
+	}
+	
+	public String verifyEnteredRateOfReturnIsPresent() throws Exception {
+		String rateOfReturnTextfieldValue = "";
+		try {
+			if(commonEvents.isDisplayed(rateOfReturnTextfield))
+			{
+			rateOfReturnTextfieldValue = commonEvents.getAttribute(rateOfReturnTextfield, "value");
+			System.out.println("rate of return value : " + rateOfReturnTextfieldValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return rateOfReturnTextfieldValue;
+	}
+	
+	public String verifyTaxRateEnteredValueIsPresent() throws Exception {
+		String taxRateTextfieldValue = "";
+		try {
+			if(commonEvents.isDisplayed(taxRateTextfield))
+			{
+			taxRateTextfieldValue = commonEvents.getAttribute(taxRateTextfield, "value");
+			System.out.println("tax rate value : " + taxRateTextfieldValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return taxRateTextfieldValue;
+	}
+	
+	public String verifyEnteredBasicMonthlySalaryIsPresent() throws Exception {
+		String basicMonthlySalaryTextfieldValue = "";
+		try {
+			if(commonEvents.isDisplayed(basicMonthlySalaryTextfield))
+			{
+			basicMonthlySalaryTextfieldValue = commonEvents.getAttribute(basicMonthlySalaryTextfield, "value");
+			System.out.println("basic monthly salary : " + basicMonthlySalaryTextfieldValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return basicMonthlySalaryTextfieldValue;
+	}
+	
+	public String verifyEnteredValueInYourContributionToEPFIsPresent() throws Exception {
+		String contributionToEPFValue = "";
+		try {
+			if(commonEvents.isDisplayed(contributionToEPFTextfield))
+			{
+			contributionToEPFValue = commonEvents.getAttribute(contributionToEPFTextfield, "value");
+			System.out.println("contribution to EPF : " + contributionToEPFValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return contributionToEPFValue;
+	}
+	
+	public String verifyEnteredYourEmployersContributionToEPFIsPresent() throws Exception {
+		String employersContributionToEPFValue = "";
+		try {
+			if(commonEvents.isDisplayed(employersContributionToEPFTextfield))
+			{
+			employersContributionToEPFValue = commonEvents.getAttribute(employersContributionToEPFTextfield, "value");
+			System.out.println(" Employers contribution to EPF : " + employersContributionToEPFValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return employersContributionToEPFValue;
+	}
+	
+	public String verifyEnteredAvgIncreaseInSalaryYouExpectIsPresent() throws Exception {
+		String avgIncreaseInSalaryYouExpectValue = "";
+		try {
+			if(commonEvents.isDisplayed(avgIncreaseInSalaryYouExpectTextfield))
+			{
+			avgIncreaseInSalaryYouExpectValue = commonEvents.getAttribute(avgIncreaseInSalaryYouExpectTextfield, "value");
+			System.out.println("Average Increase in salary you expect : " + avgIncreaseInSalaryYouExpectValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return avgIncreaseInSalaryYouExpectValue;
+	}
+	
+	public String verifyEnterAgeWhenYouIntendToRetireIsPresent() throws Exception {
+		String ageWhenYouIntendToRetireValue = "";
+		try {
+			if(commonEvents.isDisplayed(ageWhenYouIntendToRetireTextfield))
+			{
+			ageWhenYouIntendToRetireValue = commonEvents.getAttribute(ageWhenYouIntendToRetireTextfield, "value");
+			System.out.println("age When You Intend To Retire Value : " + ageWhenYouIntendToRetireValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return ageWhenYouIntendToRetireValue;
+	}
+	
+	public String verifyEnteredCurrentEpfBalanceIfAnyIsPresent() throws Exception {
+		String currentEpfBalanceIfAnyValue = "";
+		try {
+			if(commonEvents.isDisplayed(currentEpfBalanceIfAnyTextfield))
+			{
+			currentEpfBalanceIfAnyValue = commonEvents.getAttribute(currentEpfBalanceIfAnyTextfield, "value");
+			System.out.println("current Epf Balance If Any Value : " + currentEpfBalanceIfAnyValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return currentEpfBalanceIfAnyValue;
+	}
+	
+	public String verifyEnteredCurrentInterestRateIsPresent() throws Exception {
+		String currentInterestRateValue = "";
+		try {
+			if(commonEvents.isDisplayed(currentInterestRateTextfield))
+			{
+			currentInterestRateValue = commonEvents.getAttribute(currentInterestRateTextfield, "value");
+			System.out.println("current Interest Rate Value : " + currentInterestRateValue);
+			Thread.sleep(2000);
+			}
+		}catch(Exception e) {
+			throw e;
+		}
+		return currentInterestRateValue;
+	}
+	
+	public WebElement totalAmountByTheTimeYouRetireElementIsPresent(WebDriver driver) {
+		WebElement totalAmountByTheTimeYouRetireWebelement = driver.findElement(totalAmountByTheTimeYouRetireElement);
+		return totalAmountByTheTimeYouRetireWebelement; 
+	}
+	
+	public WebElement youWillHaveAccumulatedTextIsPresent(WebDriver driver) {
+		WebElement youWillHaveAccumulatedTextWebelement = driver.findElement(youWillHaveAccumulatedText);
+		return youWillHaveAccumulatedTextWebelement; 
 	}
 }
